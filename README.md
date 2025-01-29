@@ -14,7 +14,7 @@ Clone le projet.
 
 ```
 git clone https://github.com/ugozchi/42_CPP.git
-cd 42_Push_Swap
+cd 42_CPP
 ```
 
 <br>
