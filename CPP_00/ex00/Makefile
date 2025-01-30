@@ -60,7 +60,7 @@ project_logo:
 				@echo "  /   \   / \   /         \   / \   /    \ "
 				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}Module_00${RED} ) ( - ) ( ${CYAN}ex00${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${NC}"
-				@echo "\n               ${NC}a 42 project by ${BOLD}Théo Zanchi${NC}\n"
+				@echo "\n               ${NC}a 42 project by ${BOLD}Ugo Zanchi${NC}\n"
 
 .PHONY:				all clean fclean re project_logo
 
