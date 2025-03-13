@@ -21,7 +21,8 @@ INFO		=		ⓘ
 # Generate log file name with timestamp
 LOGFILE = $(shell date +'%Y%m%d_%H%M%S').log
 
-SRC			=	megaphone.cpp \
+SRC			=	Account.cpp \
+				tests.cpp \
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})
@@ -43,6 +44,11 @@ $(OBJ_DIR)/%.o:	$(SRCS_DIR)%.cpp
 				printf " ${OK}\n"; \
 				printf "${RESET}"; 
 
+run:			all
+				@echo "\nRunning the test code";
+				@./${NAME} > ${LOGFILE}
+				@echo "${RED}\nLog file ${LOGFILE} generated${RESET}\n"
+
 clean:
 				@if [ ! -d "${OBJ_DIR}" ]; \
 				then \
@@ -51,6 +57,8 @@ clean:
 					echo "${RED}Removing all .o files${RESET}"; \
 					rm -r ${OBJ_DIR}; \
 				fi
+				@echo "Removing logfiles from root"
+				@rm -f 2*.log
 
 fclean:			clean
 				@echo "Removing executable from root"
@@ -62,7 +70,7 @@ re:				fclean all
 project_logo:
 				@echo "${RED}   ___     _     _________     _     ____"
 				@echo "  /   \   / \   /         \   / \   /    \ "
-				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP00  ${RED} ) ( - ) ( ${CYAN}ex00${RED} )"
+				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}Module_00${RED} ) ( - ) ( ${CYAN}ex02${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${RESET}"
 				@echo "\n               ${RESET}a 42 project by ${BOLD}Ugo Zanchi${RESET}\n"
 
