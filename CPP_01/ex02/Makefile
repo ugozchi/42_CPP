@@ -18,9 +18,6 @@ BOLD		=		\033[1m
 OK			=		✓
 INFO		=		ⓘ
 
-# Generate log file name with timestamp
-LOGFILE = $(shell date +'%Y%m%d_%H%M%S').log
-
 SRC			=	main.cpp \
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
