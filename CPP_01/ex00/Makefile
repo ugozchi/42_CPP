@@ -1,7 +1,7 @@
 #Compiler targets and libraries
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
-NAME		=	global_banksters
+NAME		=	brainz
 
 # Directories
 SRCS_DIR	=	./
@@ -21,8 +21,10 @@ INFO		=		ⓘ
 # Generate log file name with timestamp
 LOGFILE = $(shell date +'%Y%m%d_%H%M%S').log
 
-SRC			=	Account.cpp \
-				tests.cpp \
+SRC			=	main.cpp \
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})
@@ -44,11 +46,6 @@ $(OBJ_DIR)/%.o:	$(SRCS_DIR)%.cpp
 				printf " ${OK}\n"; \
 				printf "${RESET}"; 
 
-run:			all
-				@echo "\nRunning the test code";
-				@./${NAME} > ${LOGFILE}
-				@echo "${RED}\nLog file ${LOGFILE} generated${RESET}\n"
-
 clean:
 				@if [ ! -d "${OBJ_DIR}" ]; \
 				then \
@@ -66,14 +63,12 @@ fclean:			clean
 
 re:				fclean all
 
-
 project_logo:
 				@echo "${RED}   ___     _     _________     _     ____"
 				@echo "  /   \   / \   /         \   / \   /    \ "
-				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP00  ${RED} ) ( - ) ( ${CYAN}ex02${RED} )"
+				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP01  ${RED} ) ( - ) ( ${CYAN}ex00${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${RESET}"
 				@echo "\n               ${RESET}a 42 project by ${BOLD}Ugo Zanchi${RESET}\n"
-
 .PHONY:			all run clean fclean re project_logo
 
 # Include dependency files
