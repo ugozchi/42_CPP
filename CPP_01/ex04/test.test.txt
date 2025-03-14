@@ -1,0 +1,4 @@
+Bonjour, ceci est un test.
+Ce programme doit remplacer un mot par un autre.
+Si tout fonctionne, les mots seront bien remplacés.
+Bonjour encore !
