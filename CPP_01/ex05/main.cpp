@@ -10,5 +10,5 @@ int main( void )
     harl.complain("ERROR");
     harl.complain("COUSCOUS");
 
-    return (EXIT_SUCCESS);
+    return (0);
 }

@@ -7,7 +7,7 @@ int main( int ac, char **av )
         std::cerr << "Wrong number of arguments" << std::endl;
         std::cerr << "Only one argument are expected" << std::endl;
         std::cerr << "Usage: ./harlFilter <level>" << std::endl;
-		return (EXIT_FAILURE);
+		return (1);
     }
     
     Harl            harl;
@@ -15,7 +15,7 @@ int main( int ac, char **av )
 
     if (index == -1) {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-        return (EXIT_FAILURE);
+        return (1);
     }
 
     switch (index) {
@@ -30,5 +30,5 @@ int main( int ac, char **av )
             break;
     }
     
-    return (EXIT_SUCCESS);
+    return (0);
 }

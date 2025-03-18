@@ -40,7 +40,7 @@ void    (Harl::*Harl::getFunction( const std::string& level ))() {
         if (levels[i] == level)
             return (functions[i]);
     }
-    return (nullptr);
+    return (NULL);
 }
 
 void Harl::complain(const std::string& level) {
