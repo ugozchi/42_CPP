@@ -19,7 +19,9 @@ OK			=		✓
 INFO		=		ⓘ
 
 SRC			=	main.cpp \
-				Fixed.cpp 
+				Fixed.cpp \
+				Point.cpp \
+				bsp.cpp
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})
@@ -61,7 +63,7 @@ re:				fclean all
 project_logo:
 				@echo "${RED}   ___     _     _________     _     ____"
 				@echo "  /   \   / \   /         \   / \   /    \ "
-				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP02  ${RED} ) ( - ) ( ${CYAN}ex02${RED} )"
+				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP02  ${RED} ) ( - ) ( ${CYAN}ex03${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${RESET}"
 				@echo "\n               ${RESET}a 42 project by ${BOLD}Ugo Zanchi${RESET}\n"
 .PHONY:			all run clean fclean re project_logo
