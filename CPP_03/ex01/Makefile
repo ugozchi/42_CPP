@@ -1,7 +1,7 @@
 #Compiler targets and libraries
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
-NAME		=	claptrap
+NAME		=	scavtrap
 
 # Directories
 SRCS_DIR	=	./
@@ -19,7 +19,8 @@ OK			=		✓
 INFO		=		ⓘ
 
 SRC			=	main.cpp \
-				ClapTrap.cpp 
+				ClapTrap.cpp \
+				ScavTrap.cpp
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})
@@ -61,7 +62,7 @@ re:				fclean all
 project_logo:
 				@echo "${RED}   ___     _     _________     _     ____"
 				@echo "  /   \   / \   /         \   / \   /    \ "
-				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP03  ${RED} ) ( - ) ( ${CYAN}ex00${RED} )"
+				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP03  ${RED} ) ( - ) ( ${CYAN}ex01${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${RESET}"
 				@echo "\n               ${RESET}a 42 project by ${BOLD}Ugo Zanchi${RESET}\n"
 .PHONY:			all run clean fclean re project_logo

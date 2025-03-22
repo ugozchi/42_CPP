@@ -1,10 +1,11 @@
 #Compiler targets and libraries
 CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
-NAME		=	claptrap
+CFLAGS		=	-Wall -Wextra -Werror -g -Wshadow -Wno-shadow -std=c++98
+NAME		=	diamondtrap
 
 # Directories
-SRCS_DIR	=	./
+SRCS_DIR	=	./sources/
+INCS_DIR	=	./includes/
 OBJ_DIR		=	${SRCS_DIR}.o
 
 # Colours, symbols and utils
@@ -19,7 +20,10 @@ OK			=		✓
 INFO		=		ⓘ
 
 SRC			=	main.cpp \
-				ClapTrap.cpp 
+				ClapTrap.cpp \
+				ScavTrap.cpp \
+				FragTrap.cpp \
+				DiamondTrap.cpp
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})
@@ -36,7 +40,7 @@ ${NAME}:		${OBJS}
 $(OBJ_DIR)/%.o:	$(SRCS_DIR)%.cpp
 				@mkdir -p $(dir $@)
 				@printf "Compiling $(notdir $<)"; \
-				${CC} ${CFLAGS} -I Account.hpp -c $< -o $@; \
+				${CC} ${CFLAGS} -I ${INCS_DIR} -c $< -o $@; \
 				printf "${GREEN}"; \
 				printf " ${OK}\n"; \
 				printf "${RESET}"; 
@@ -61,7 +65,7 @@ re:				fclean all
 project_logo:
 				@echo "${RED}   ___     _     _________     _     ____"
 				@echo "  /   \   / \   /         \   / \   /    \ "
-				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP03  ${RED} ) ( - ) ( ${CYAN}ex00${RED} )"
+				@echo " ( ${CYAN}C++${RED} ) ( - ) ( ${CYAN}  CPP03  ${RED} ) ( - ) ( ${CYAN}ex03${RED} )"
 				@echo "  \___/   \_/   \_________/   \_/   \____/${RESET}"
 				@echo "\n               ${RESET}a 42 project by ${BOLD}Ugo Zanchi${RESET}\n"
 .PHONY:			all run clean fclean re project_logo
