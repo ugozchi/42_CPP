@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include "AMateria.hpp"
-
+class AMateria;
 class ICharacter
 {
 public:
@@ -28,10 +28,10 @@ public:
 	Character&	operator=( const Character& src );
 	~Character();
 
-	const std::string&	getName() const override;
-	void				equip(AMateria* m) override;
-	void				unequip(int idx) override;
-	void				use(int idx, ICharacter& target) override;
+	const std::string&	getName() const;
+	void				equip(AMateria* m);
+	void				unequip(int idx);
+	void				use(int idx, ICharacter& target);
 };
 
 #endif

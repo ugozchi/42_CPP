@@ -19,7 +19,12 @@ BOLD		=		\033[1m
 OK			=		✓
 INFO		=		ⓘ
 
-SRC			=	main.cpp 
+SRC			=	AMateria.cpp \
+				Character.cpp \
+				Cure.cpp \
+				Ice.cpp \
+				main.cpp \
+				MateriaSource.cpp
 
 SRCS		=	$(addprefix ${SRCS_DIR}, ${SRC})
 SRC_NR		=	$(words ${SRCS})

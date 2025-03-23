@@ -11,8 +11,8 @@ public:
 	Cure& operator=( const Cure& src );
 	~Cure();
 
-    AMateria*   clone() const override;
-    void        use(ICharacter& target) override;
+    AMateria*   clone() const;
+    void        use(ICharacter& target);
 
 };
 

@@ -11,8 +11,8 @@ public:
 	Ice& operator=( const Ice& src );
 	~Ice();
 
-    AMateria*   clone() const override;
-    void        use(ICharacter& target) override;
+    AMateria*   clone() const;
+    void        use(ICharacter& target);
 
 };
 
