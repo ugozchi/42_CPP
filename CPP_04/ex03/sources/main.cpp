@@ -36,7 +36,7 @@ int main() {
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob); // Slot vide
-	me->use(42, *bob); // Index invalide
+	me->use(42, *bob);
 
 	std::cout << "\n===== DEEP COPY TEST =====\n" << std::endl;
 
