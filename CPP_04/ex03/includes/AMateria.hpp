@@ -9,6 +9,7 @@ class AMateria
 {
 protected:
     std::string     _type;
+
 public:
     AMateria( void );
     AMateria( std::string const & type );

@@ -18,7 +18,9 @@ AMateria& AMateria::operator=(const AMateria& src) {
 	return *this;
 }
 
-AMateria::~AMateria() {}
+AMateria::~AMateria() { 
+	std::cout << "AMateria of type [" << _type << "] destroyed" << std::endl;
+}
 
 
 /*

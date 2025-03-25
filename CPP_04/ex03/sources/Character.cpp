@@ -35,6 +35,8 @@ Character::~Character() {
 			_inventory[i] = NULL;
 		}
 	}
+	std::cout << "Freeing all allocated memory..." << std::endl;
+	std::cout << "Character destructor called for " << _name << std::endl;
 }
 
 
@@ -79,6 +81,8 @@ void                    Character::equip(AMateria* m) {
 		std::cout << "Equiping " << _name << " with " << m->getType();
 		std::cout << " at index " << i << std::endl;
 	}
+	else
+		std::cout << "No more space in the inventory, unequip before equiping a new Materia" << std::endl;
 }
 
 void                    Character::unequip(int index) {
@@ -95,6 +99,8 @@ void                    Character::unequip(int index) {
 void                    Character::use(int index, ICharacter& target) {
 	if (index < MAX_INVENTORY && _inventory[index]) {
 		_inventory[index]->use(target);
+		std::cout << this->_name << " uses Materia at index " << index << " on " << target.getName() << std::endl;
+
 	}
 	else if (index >= MAX_INVENTORY)
 		std::cout << index << " is not a valid index";
