@@ -12,7 +12,7 @@ Dog::Dog() : Animal(), _brain(NULL) {
 	std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& src) : Animal(src), _brain(nullptr) {
+Dog::Dog(const Dog& src) : Animal(src), _brain(NULL) {
 	_type = src._type;
 	if (src._brain) {
 		try {
@@ -38,7 +38,7 @@ Dog& Dog::operator=(const Dog& src) {
 				throw;
 			}
 		} else {
-			_brain = nullptr;
+			_brain = NULL;
 		}
 	}
 	std::cout << "Dog assignment operator used" << std::endl;

@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 #include <new>
 
-Cat::Cat() : Animal(), _brain(nullptr) {
+Cat::Cat() : Animal(), _brain(NULL) {
 	_type = "Cat";
 	try {
 		_brain = new Brain();
@@ -12,7 +12,7 @@ Cat::Cat() : Animal(), _brain(nullptr) {
 	std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& src) : Animal(src), _brain(nullptr) {
+Cat::Cat(const Cat& src) : Animal(src), _brain(NULL) {
 	_type = src._type;
 	if (src._brain) {
 		try {
@@ -38,7 +38,7 @@ Cat& Cat::operator=(const Cat& src) {
 				throw;
 			}
 		} else {
-			_brain = nullptr;
+			_brain = NULL;
 		}
 	}
 	std::cout << "Cat assignment operator used" << std::endl;
